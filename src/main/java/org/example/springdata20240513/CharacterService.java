@@ -17,8 +17,8 @@ public class CharacterService {
     }
 
     public List<Character> getCharacters() {
-        return characterRepo.findCharacterByAgeBetween(1,4);
-        //return characterRepo.findAll();
+        //return characterRepo.findCharacterByAgeBetween(1,4);
+        return characterRepo.findAll();
     }
     public Optional<Character> getCharacterById(String id) {
         return characterRepo.findById(id);

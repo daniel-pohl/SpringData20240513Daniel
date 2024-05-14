@@ -16,6 +16,7 @@ public class AsterixController {
 
     @GetMapping("/characters")
     public List<Character> getCharacters() {
+        System.out.println("getCharacters funktioniert.....");
         return characterService.getCharacters();
     }
 

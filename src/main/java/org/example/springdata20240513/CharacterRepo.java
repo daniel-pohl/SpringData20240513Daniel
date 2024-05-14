@@ -8,5 +8,6 @@ import java.util.List;
 @Repository
 public interface CharacterRepo extends MongoRepository<Character, String> {
 
-    List<Character> findCharacterByAgeBetween(int minAge, int maxAge);
+    //List<Character> findCharacterByAgeBetween(int minAge, int maxAge);
+    //siehe in Charecterservice die getCharacters methode
 }
