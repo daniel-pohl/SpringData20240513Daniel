@@ -18,6 +18,7 @@ public class AsterixController {
     public List<Character> getCharacters() {
         return characterService.getCharacters();
     }
+
     @GetMapping("/characters/{id}")
     public Optional<Character> getCharacterById(@PathVariable String id) {
         return characterService.getCharacterById(id);
@@ -32,10 +33,10 @@ public class AsterixController {
         return characterService.deleteCharacter(id);
     }
 
-    @PutMapping("/characters/{id}")
-    public String updateCharacter(@PathVariable String id, @RequestBody Character updatedCharacter) {
-        return characterService.updateCharacter(id, updatedCharacter);
-    }
+//    @PutMapping("/characters/{id}")
+//    public String updateCharacter(@PathVariable String id, @RequestBody Character updatedCharacter) {
+//        return characterService.updateCharacter(id, updatedCharacter);
+//    }
 
 
 }

@@ -15,8 +15,10 @@ public class CharacterService {
     public CharacterService(CharacterRepo characterRepo) {
         this.characterRepo = characterRepo;
     }
+
     public List<Character> getCharacters() {
-        return characterRepo.findAll();
+        return characterRepo.findCharacterByAgeBetween(1,4);
+        //return characterRepo.findAll();
     }
     public Optional<Character> getCharacterById(String id) {
         return characterRepo.findById(id);
@@ -33,20 +35,21 @@ public class CharacterService {
         }
         return "Character with ID " + id + " not found.";
     }
-    public String updateCharacter(String id, Character characterToUpdate) {
-            //hier das
-        // optional
-        if (characterRepo.findById(characterToUpdate.id())) {
-            Character existingCharacter = Character.builder()
-                    .id(characterToUpdate.id())
-                    .name(characterToUpdate.name()==null?character.name(): characterToUpdate.name())
-                    .age(characterToUpdate.age())
-                    .occupation(characterToUpdate.occupation())
-                    .build();
-            characterRepo.save(existingCharacter);
-            return "Character with ID " + id + " updated successfully.";
-        } else {
-            return "Character with ID " + id + " not found.";
-        }
-    }
+
+//    public String updateCharacter(String id, Character characterToUpdate) {
+//            //hier das
+//        // optional
+//        if (characterRepo.findById(characterToUpdate.id())) {
+//            Character existingCharacter = Character.builder()
+//                    .id(characterToUpdate.id())
+//                    .name(characterToUpdate.name()==null?character.name(): characterToUpdate.name())
+//                    .age(characterToUpdate.age())
+//                    .occupation(characterToUpdate.occupation())
+//                    .build();
+//            characterRepo.save(existingCharacter);
+//            return "Character with ID " + id + " updated successfully.";
+//        } else {
+//            return "Character with ID " + id + " not found.";
+//        }
+//    }
 }
